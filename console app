@@ -1,0 +1,85 @@
+ # بشمهندس اانا كنت باعت لححضرتك الكود هو كان شغال مايا كويس ومش عارف اى اللى ضرب فية وانا كل اللى اعرفهم كلهم سي شارب ف محدش عارف يساعدنى 
+class Student:
+
+    # Constructor
+    def _init_(self, name,idd, department, grade):
+        self.name = name
+        self.idd = idd
+        self.department = department
+        self.grade = grade
+
+    # Function to create and append new student
+    def accept(self, Name, idd, department, grade):
+
+        # use ' int(input()) ' method to take input from user
+        ob = Student(Name, idd, department, grade)
+        ls.append(ob)
+
+    # Function to display student details
+    def display(self, ob):
+        print("Name : ", ob.name)
+        print("number : ", ob.idd)
+        print("department : ", ob.department)
+        print("grade : ", ob.grade)
+        print("\n")
+
+    # Search Function
+    def search(self, rn):
+        for i in range(ls._len_()):
+            if (ls[i].idd == rn):
+                return i
+
+    # Delete Function
+    def delete(self, rn):
+        i = obj.search(rn)
+        del ls[i]
+        # Update Function
+    def update(self, rn, No):
+        i = obj.search(rn)
+        roll = No
+        ls[i].idd = roll
+
+
+# Create a list to add Students
+ls = []
+# an object of Student class
+obj = Student('', 0, 0, 0)
+
+print("\nOperations used, ")
+print(
+    "\n1.Accept Student details\n2.Display Student Details\n3.Search Details of a Student\n4.Delete Details of Student\n5.Update Student Details\n6.Exit")
+print(ls)
+ch = int(input("Enter choice:"))
+if ch == 1:
+    obj.accept("Ahmed", '302302', "CS", 3)
+    obj.accept("Omar", '4343', "IT", 4)
+    obj.accept("Yousef", '3242', "GENERAL", 2)
+    print('Students Added succesfully')
+elif(ch == 2):
+    print("\n")
+    print("\nList of Students\n")
+    for i in range(ls._len_()):
+        obj.display(ls[i])
+
+elif(ch == 3):
+    print("\n Student Found, ")
+    s = obj.search('4343')
+    print(s)
+    obj.display(ls[s])
+
+elif(ch == 4):
+    obj.delete('302302')
+    print('number of students found after deletion: ',ls._len_())
+    print("List after deletion")
+    for i in range(ls._len_()):
+        obj.display(ls[i])
+
+elif(ch == 5):
+    obj.update('3242', '2')
+    print(ls._len_())
+    print("List after updation")
+    for i in range(ls._len_()):
+        obj.display(ls[i])
+
+else:
+    print("Thank You !")
